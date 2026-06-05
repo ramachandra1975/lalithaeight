@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="sa-Latn" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lalitopākhyāna — Part VIII | Nāmas 973–1000 | Scholarly Edition | lalithaeight.culturalmusings.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+Devanagari:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --crimson: #8B1A1A;
+  --crimson-light: #B5302A;
+  --gold: #B8962E;
+  --gold-light: #D4AF5A;
+  --gold-pale: #F5EDD8;
+  --ink: #1C1208;
+  --ink-mid: #3D2B1F;
+  --ink-soft: #6B4F3A;
+  --parchment: #FAF6EE;
+  --parchment-dark: #EDE5D0;
+  --parchment-mid: #F3EDD8;
+  --rule: #C8B08A;
+  --rule-light: #DDD0B0;
+  --white: #FFFFFF;
+  --sidebar-w: 280px;
+  --font-body: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --font-deva: 'Noto Sans Devanagari', sans-serif;
+  --transition: 0.22s ease;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 17px; }
+body {
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.75;
+  min-height: 100vh;
+}
+
+/* ── Sidebar ── */
+#sidebar {
+  position: fixed; top: 0; left: 0; bottom: 0;
+  width: var(--sidebar-w);
+  background: var(--ink);
+  color: var(--gold-pale);
+  overflow-y: auto;
+  z-index: 200;
+  transition: transform var(--transition);
+  border-right: 1px solid #3a2a1a;
+}
+#sidebar-header {
+  padding: 1.4rem 1.2rem 1rem;
+  border-bottom: 1px solid #3a2a1a;
+  display: flex; justify-content: space-between; align-items: flex-start;
+}
+#sidebar-header .brand {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-weight: 500;
+  line-height: 1.6;
+}
+#sidebar-close {
+  background: none; border: none; color: var(--gold-light);
+  font-size: 1.2rem; cursor: pointer; padding: 0 0.2rem; line-height: 1;
+  transition: color var(--transition);
+}
+#sidebar-close:hover { color: var(--white); }
+#sidebar nav { padding: 0.8rem 0 2rem; }
+#sidebar nav h3 {
+  font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); padding: 1rem 1.2rem 0.4rem;
+  font-family: var(--font-body); font-weight: 500;
+}
+#sidebar nav a {
+  display: block; padding: 0.38rem 1.2rem;
+  font-size: 0.82rem; color: #C8B99A;
+  text-decoration: none; line-height: 1.4;
+  font-family: var(--font-body);
+  transition: color var(--transition), background var(--transition);
+  border-left: 2px solid transparent;
+}
+#sidebar nav a:hover {
+  color: var(--gold-pale); background: rgba(180,130,60,0.12);
+  border-left-color: var(--gold);
+}
+
+/* ── Top Bar ── */
+#topbar {
+  position: fixed; top: 0; left: var(--sidebar-w); right: 0; height: 52px;
+  background: var(--parchment); border-bottom: 1px solid var(--rule);
+  display: flex; align-items: center; gap: 1rem; padding: 0 2rem;
+  z-index: 100;
+}
+#menu-btn {
+  display: none; background: none; border: none;
+  font-size: 1.3rem; color: var(--ink-mid); cursor: pointer;
+}
+.breadcrumb {
+  font-size: 0.76rem; color: var(--ink-soft); letter-spacing: 0.06em;
+  font-family: var(--font-body);
+}
+.breadcrumb a { color: var(--crimson); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+/* ── Main Layout ── */
+#main {
+  margin-left: var(--sidebar-w);
+  padding-top: 52px;
+}
+
+/* ── Tabs ── */
+#tabs-bar {
+  background: var(--ink);
+  display: flex; overflow-x: auto; gap: 0;
+  border-bottom: 2px solid var(--gold);
+  position: sticky; top: 52px; z-index: 90;
+  scrollbar-width: none;
+}
+#tabs-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  background: none; border: none; cursor: pointer;
+  padding: 0.7rem 1.25rem;
+  font-family: var(--font-body); font-size: 0.78rem;
+  color: #A89070; letter-spacing: 0.08em;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
+}
+.tab-btn:hover { color: var(--gold-light); background: rgba(180,130,60,0.1); }
+.tab-btn.active {
+  color: var(--gold); border-bottom-color: var(--gold);
+  background: rgba(180,130,60,0.15);
+}
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── Page Content ── */
+.content-wrap {
+  max-width: 820px; margin: 0 auto; padding: 3.5rem 2.5rem 6rem;
+}
+
+/* ── Hero ── */
+.hero {
+  text-align: center;
+  padding: 3.5rem 2rem 2.5rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 3rem;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  display: block;
+  width: 80px; height: 1px;
+  background: var(--gold);
+  margin: 0 auto 1.5rem;
+}
+.hero .om-mantra {
+  font-size: 1.1rem; color: var(--crimson);
+  letter-spacing: 0.14em; font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-deva);
+}
+.hero .subtitle-line {
+  font-size: 0.8rem; color: var(--ink-soft);
+  letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+.hero h1 {
+  font-size: 2.4rem; font-weight: 300; font-style: italic;
+  color: var(--ink); line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+.hero h1 strong { font-weight: 600; font-style: normal; color: var(--crimson); }
+.hero .namas-range {
+  font-size: 0.88rem; color: var(--gold);
+  letter-spacing: 0.1em; margin-bottom: 1.4rem;
+}
+.hero p.summary {
+  font-size: 1.02rem; color: var(--ink-mid);
+  max-width: 640px; margin: 0 auto 1.2rem;
+  line-height: 1.8;
+}
+.hero .after-line {
+  font-size: 0.78rem; color: var(--ink-soft); font-style: italic;
+}
+.hero .edition-note {
+  font-size: 0.75rem; color: var(--ink-soft); letter-spacing: 0.08em;
+  margin-top: 1.5rem;
+}
+.breadcrumb-hero {
+  font-size: 0.76rem; color: var(--ink-soft);
+  margin-top: 1.8rem; letter-spacing: 0.05em;
+}
+.breadcrumb-hero a { color: var(--crimson); text-decoration: none; }
+
+/* ── Section Header ── */
+.section-hd {
+  text-align: center;
+  padding: 2rem 0 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.section-hd .deva-title {
+  font-family: var(--font-deva);
+  font-size: 1.4rem; color: var(--crimson);
+  font-weight: 400; margin-bottom: 0.3rem;
+}
+.section-hd h2 {
+  font-size: 1.6rem; font-weight: 400;
+  color: var(--ink); margin-bottom: 0.3rem;
+}
+.section-hd .scope {
+  font-size: 0.8rem; color: var(--ink-soft);
+  line-height: 1.6; margin-top: 0.5rem;
+}
+.section-rule {
+  border: none; border-top: 1px solid var(--rule);
+  margin: 2rem 0;
+}
+.section-rule-gold {
+  border: none; border-top: 1px solid var(--gold-light);
+  margin: 2rem 0;
+}
+
+/* ── Page Marker ── */
+.page-marker {
+  font-size: 0.7rem; color: var(--ink-soft); letter-spacing: 0.12em;
+  text-transform: uppercase; text-align: center;
+  margin: 2.5rem 0 1.5rem;
+  position: relative;
+}
+.page-marker::before, .page-marker::after {
+  content: ''; display: inline-block;
+  width: 40px; height: 1px; background: var(--rule);
+  vertical-align: middle; margin: 0 0.8rem;
+}
+
+/* ── Prefatory Block ── */
+.prefatory {
+  background: var(--parchment-mid);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--gold);
+  padding: 1.5rem 1.8rem;
+  border-radius: 2px;
+  margin-bottom: 2.5rem;
+  font-size: 1rem; line-height: 1.9;
+  color: var(--ink-mid);
+}
+.prefatory strong { color: var(--ink); font-weight: 600; }
+
+/* ── Nāma Hero ── */
+.nama-hero {
+  margin: 2.5rem 0 1.5rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 2rem;
+}
+.nama-hero .nama-num {
+  font-size: 0.72rem; color: var(--gold);
+  letter-spacing: 0.16em; text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.nama-hero .nama-deva {
+  font-family: var(--font-deva);
+  font-size: 2rem; color: var(--crimson);
+  font-weight: 400; line-height: 1.3;
+  margin-bottom: 0.2rem;
+}
+.nama-hero .nama-roman {
+  font-size: 1.2rem; font-style: italic; color: var(--ink);
+  font-weight: 300; margin-bottom: 0.8rem;
+}
+.nama-hero .nama-gloss {
+  font-size: 0.88rem; color: var(--ink-soft);
+  line-height: 1.6;
+}
+.nama-hero p.commentary {
+  margin-top: 0.9rem;
+  font-size: 1.02rem; line-height: 1.85;
+  color: var(--ink-mid);
+}
+.nama-hero .tags {
+  margin-top: 0.7rem; display: flex; flex-wrap: wrap; gap: 0.4rem;
+}
+.nama-hero .tag {
+  background: var(--parchment-dark); color: var(--ink-soft);
+  font-size: 0.7rem; letter-spacing: 0.08em;
+  padding: 0.15rem 0.6rem; border-radius: 2px;
+  border: 1px solid var(--rule);
+}
+
+/* ── Nāma Table ── */
+.nama-table {
+  width: 100%; border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.97rem;
+}
+.nama-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--rule-light);
+  vertical-align: top;
+  line-height: 1.75;
+  color: var(--ink-mid);
+}
+.nama-table td:first-child {
+  width: 56px; color: var(--gold);
+  font-size: 0.78rem; letter-spacing: 0.06em;
+  padding-top: 0.95rem;
+  white-space: nowrap;
+  font-weight: 500;
+}
+.nama-table td:nth-child(2) {
+  width: 180px;
+  font-family: var(--font-deva);
+  font-size: 1.05rem; color: var(--crimson);
+  font-weight: 400;
+}
+.nama-table tr:hover td { background: rgba(200,176,138,0.07); }
+.nama-table em { font-style: italic; color: var(--ink); }
+
+/* ── Colophon Block ── */
+.colophon-block {
+  background: var(--ink);
+  color: var(--gold-pale);
+  padding: 2.5rem 2rem;
+  border-radius: 2px;
+  text-align: center;
+  margin: 3rem 0;
+}
+.colophon-block .deva-colophon {
+  font-family: var(--font-deva);
+  font-size: 1.3rem; color: var(--gold);
+  line-height: 1.9; margin-bottom: 1rem;
+}
+.colophon-block .roman-colophon {
+  font-size: 0.88rem; color: #C8B99A;
+  font-style: italic; line-height: 1.8;
+}
+.colophon-block .bija {
+  font-size: 1.8rem; color: var(--gold);
+  font-family: var(--font-deva);
+  letter-spacing: 0.2em; margin-bottom: 1rem;
+  display: block;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  border-left: 3px solid var(--gold);
+  padding: 0.9rem 1.4rem;
+  margin: 1.8rem 0;
+  background: var(--parchment-mid);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-mid);
+  line-height: 1.85;
+}
+blockquote cite {
+  display: block; margin-top: 0.5rem;
+  font-size: 0.78rem; font-style: normal;
+  color: var(--ink-soft); letter-spacing: 0.05em;
+}
+
+/* ── Adhyāya sections ── */
+.adhyaya-header {
+  background: var(--parchment-dark);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--crimson);
+  padding: 1.4rem 1.8rem;
+  margin: 2.5rem 0 1.5rem;
+}
+.adhyaya-header .num {
+  font-size: 0.7rem; color: var(--crimson); letter-spacing: 0.14em;
+  text-transform: uppercase; font-weight: 500; margin-bottom: 0.3rem;
+}
+.adhyaya-header .deva {
+  font-family: var(--font-deva); font-size: 1.3rem; color: var(--ink);
+  font-weight: 400; margin-bottom: 0.2rem;
+}
+.adhyaya-header h3 {
+  font-size: 1.25rem; font-weight: 400; color: var(--ink); margin-bottom: 0.3rem;
+}
+.adhyaya-header .scope {
+  font-size: 0.8rem; color: var(--ink-soft); line-height: 1.6;
+}
+.adhyaya-body { font-size: 0.98rem; line-height: 1.88; color: var(--ink-mid); }
+.adhyaya-body p { margin-bottom: 1rem; }
+.adhyaya-body .verse-intro {
+  font-size: 0.72rem; color: var(--gold); letter-spacing: 0.12em;
+  text-transform: uppercase; font-weight: 500; margin: 1.5rem 0 0.4rem;
+}
+.adhyaya-body .speaker {
+  font-size: 0.75rem; color: var(--crimson); font-weight: 500;
+  letter-spacing: 0.08em; margin-bottom: 0.3rem; text-transform: uppercase;
+}
+
+/* ── Sonic Analysis ── */
+.sonic-tabs-bar {
+  display: flex; gap: 0; border-bottom: 1px solid var(--rule);
+  overflow-x: auto; margin-bottom: 2rem;
+  scrollbar-width: none;
+}
+.sonic-tabs-bar::-webkit-scrollbar { display: none; }
+.sonic-tab-btn {
+  background: none; border: none; cursor: pointer;
+  padding: 0.55rem 1rem;
+  font-family: var(--font-body); font-size: 0.76rem;
+  color: var(--ink-soft); letter-spacing: 0.06em;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  transition: color var(--transition), border-color var(--transition);
+}
+.sonic-tab-btn:hover { color: var(--crimson); }
+.sonic-tab-btn.active { color: var(--crimson); border-bottom-color: var(--crimson); }
+.sonic-panel { display: none; }
+.sonic-panel.active { display: block; }
+.sonic-card {
+  background: var(--parchment-mid); border: 1px solid var(--rule);
+  padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-radius: 2px;
+}
+.sonic-card h4 {
+  font-size: 0.85rem; color: var(--crimson); font-weight: 500;
+  letter-spacing: 0.06em; margin-bottom: 0.4rem;
+}
+.sonic-card p { font-size: 0.93rem; color: var(--ink-mid); line-height: 1.8; }
+.sonic-card .deva-term {
+  font-family: var(--font-deva); font-size: 1.1rem; color: var(--ink); margin-right: 0.4rem;
+}
+.raga-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.6rem; margin: 1rem 0;
+}
+.raga-card {
+  background: var(--parchment-dark); border: 1px solid var(--rule);
+  padding: 0.7rem 0.9rem; border-radius: 2px;
+  font-size: 0.82rem; color: var(--ink-mid);
+}
+.raga-card .raga-num {
+  font-size: 0.65rem; color: var(--gold); letter-spacing: 0.1em;
+  display: block; margin-bottom: 0.2rem;
+}
+.raga-card .raga-name { font-weight: 500; color: var(--ink); }
+
+/* ── Cross-Ref ── */
+.xref-table {
+  width: 100%; border-collapse: collapse; font-size: 0.88rem;
+}
+.xref-table th {
+  padding: 0.5rem 0.8rem; background: var(--parchment-dark);
+  color: var(--ink); font-weight: 500; font-size: 0.75rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  border-bottom: 2px solid var(--rule);
+  text-align: left;
+}
+.xref-table td {
+  padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--rule-light);
+  color: var(--ink-mid); vertical-align: top;
+}
+.xref-table tr:hover td { background: rgba(200,176,138,0.07); }
+
+/* ── Dhyāna tab ── */
+.dhyana-verse {
+  font-family: var(--font-deva);
+  font-size: 1.15rem; color: var(--ink);
+  line-height: 2.1; text-align: center;
+  background: var(--parchment-mid);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--crimson);
+  padding: 2rem 2rem;
+  margin: 1.5rem 0;
+}
+.dhyana-translation {
+  font-style: italic; font-size: 1rem; color: var(--ink-mid);
+  line-height: 1.9; text-align: center;
+  padding: 1rem 1.5rem;
+}
+.dhyana-section-title {
+  text-align: center;
+  font-size: 0.72rem; color: var(--crimson);
+  letter-spacing: 0.16em; text-transform: uppercase;
+  font-weight: 500; margin: 2rem 0 0.8rem;
+}
+
+/* ── Mudra section ── */
+.mudra-card {
+  border: 1px solid var(--rule); padding: 1.2rem 1.5rem; margin-bottom: 1rem;
+  background: var(--parchment-mid);
+}
+.mudra-card .mudra-num {
+  font-size: 0.68rem; color: var(--gold); letter-spacing: 0.12em; margin-bottom: 0.2rem;
+}
+.mudra-card h4 {
+  font-family: var(--font-deva); font-size: 1.1rem; color: var(--crimson);
+  margin-bottom: 0.3rem;
+}
+.mudra-card .roman { font-style: italic; color: var(--ink); font-size: 0.92rem; margin-bottom: 0.4rem; }
+.mudra-card p { font-size: 0.92rem; color: var(--ink-mid); line-height: 1.8; }
+
+/* ── Floret ── */
+.floret { text-align: center; color: var(--gold); font-size: 1.2rem; margin: 2rem 0; }
+
+/* ── Footnotes ── */
+.footnotes {
+  border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.2rem;
+}
+.footnotes h4 {
+  font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-soft); margin-bottom: 0.8rem; font-weight: 500;
+}
+.footnotes ol { padding-left: 1.5rem; }
+.footnotes li { font-size: 0.83rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 0.4rem; }
+
+/* ── Mobile ── */
+@media (max-width: 860px) {
+  :root { --sidebar-w: 0px; }
+  #sidebar { transform: translateX(-280px); width: 280px; }
+  #sidebar.open { transform: translateX(0); }
+  #topbar { left: 0; }
+  #menu-btn { display: block; }
+  #main { margin-left: 0; }
+  .content-wrap { padding: 2rem 1.2rem 5rem; }
+  .hero h1 { font-size: 1.7rem; }
+  .nama-table td:nth-child(2) { width: 120px; font-size: 0.95rem; }
+  .raga-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+}
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <div class="brand">Part VIII · Navigation<br>Lalitopākhyāna</div>
+    <button id="sidebar-close" aria-label="Close menu">✕</button>
+  </div>
+  <nav>
+    <h3>Main Tabs</h3>
+    <a href="#" onclick="switchTab('dhyana');return false;">ॐ ललिता ध्यान</a>
+    <a href="#" onclick="switchTab('namas');return false;">Nāmas 973–1000</a>
+    <a href="#" onclick="switchTab('adhyaya40');return false;">Adhyāya 40 · Kāmākṣī</a>
+    <a href="#" onclick="switchTab('adhyaya42');return false;">Adhyāya 42 · Mudrās</a>
+    <a href="#" onclick="switchTab('adhyaya43');return false;">Adhyāya 43 · Dīkṣā</a>
+    <a href="#" onclick="switchTab('adhyaya44');return false;">Adhyāya 44 · Meditation</a>
+    <a href="#" onclick="switchTab('sonic');return false;">Sonic Analysis नाद-मेल</a>
+    <a href="#" onclick="switchTab('colophon');return false;">Colophon उपसंहारः</a>
+    <h3>Nāma Sections</h3>
+    <a href="#" onclick="switchTab('namas');return false;">973–980 · Pure Mind · Mudras</a>
+    <a href="#" onclick="switchTab('namas');return false;">981–990 · Jñāna · Yoni · Triguṇā</a>
+    <a href="#" onclick="switchTab('namas');return false;">991–1000 · Colophon Nāmas</a>
+    <h3>Related</h3>
+    <a href="https://lalithaseven.culturalmusings.com/" target="_blank">← Part VII · Nāmas 767–972</a>
+    <a href="https://lalithafive.culturalmusings.com/" target="_blank">Part V</a>
+    <a href="https://lalithasix.culturalmusings.com/" target="_blank">Part VI</a>
+  </nav>
+</aside>
+
+<!-- Top Bar -->
+<div id="topbar">
+  <button id="menu-btn" aria-label="Open menu">☰</button>
+  <div class="breadcrumb">
+    <a href="https://lalithatwo.culturalmusings.com/">Lalitā Home</a> ›
+    <a href="https://lalithafive.culturalmusings.com/">Part V</a> ›
+    <a href="https://lalithasix.culturalmusings.com/">Part VI</a> ›
+    <a href="https://lalithaseven.culturalmusings.com/">Part VII</a> ›
+    <strong>Part VIII · Nāmas 973–1000 · Adhyāya 40–44</strong>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div id="main">
+
+  <!-- Tabs Bar -->
+  <div id="tabs-bar" role="tablist">
+    <button class="tab-btn active" onclick="switchTab('dhyana')" role="tab">ॐ ललिता ध्यान</button>
+    <button class="tab-btn" onclick="switchTab('namas')" role="tab">Nāmas 973–1000</button>
+    <button class="tab-btn" onclick="switchTab('adhyaya40')" role="tab">Adhyāya 40 · Kāmākṣī</button>
+    <button class="tab-btn" onclick="switchTab('adhyaya42')" role="tab">Adhyāya 42 · Mudrās</button>
+    <button class="tab-btn" onclick="switchTab('adhyaya43')" role="tab">Adhyāya 43 · Dīkṣā</button>
+    <button class="tab-btn" onclick="switchTab('adhyaya44')" role="tab">Adhyāya 44 · Meditation</button>
+    <button class="tab-btn" onclick="switchTab('sonic')" role="tab">Sonic Analysis नाद-मेल</button>
+    <button class="tab-btn" onclick="switchTab('colophon')" role="tab">Colophon उपसंहारः</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       TAB 1 · ॐ ललिता ध्यान
+  ═══════════════════════════════════════════════ -->
+  <div id="tab-dhyana" class="tab-panel active">
+    <div class="content-wrap">
+
+      <div class="hero">
+        <div class="om-mantra">ॐ ललिता ध्यान</div>
+        <div class="subtitle-line">Brahmāṇḍa Purāṇa · Uttarabhāga · Adhyāya 40–44</div>
+        <h1>Lalitopākhyāna — <strong>Part Eight</strong></h1>
+        <div class="namas-range">Nāmas 973–1000 · The Final Thousand · Colophon</div>
+        <p class="summary">
+          The closing session of the Lalitā Sahasranāma. Nāmas 973 through 1000 bring the
+          great hymn to its culmination — from <em>Śuddhamānasā</em>, She of pure mind, through
+          the ten Mudrā epithets, the Jñāna and Yoni Mudrā forms, the Triguṇā nature,
+          and the supreme final triad: <em>Śrīśivā</em>, <em>Śivaśaktaikyarūpiṇī</em>,
+          and <em>Lalitāmbikā</em> — the divine Mother Lalitā herself.
+        </p>
+        <div class="after-line">After Bhāskararāya Makhin · Śaṅkarācārya · The Brahmāṇḍa Purāṇa</div>
+        <div class="edition-note">Scholarly Edition · Session VIII · Final Part</div>
+        <div class="breadcrumb-hero">
+          <a href="https://lalithatwo.culturalmusings.com/">Lalitā Home</a> ›
+          <a href="https://lalithafive.culturalmusings.com/">Part V</a> ›
+          <a href="https://lalithasix.culturalmusings.com/">Part VI</a> ›
+          <a href="https://lalithaseven.culturalmusings.com/">Part VII</a> ›
+          <strong>Part VIII · Nāmas 973–1000 · Adhyāya 40–44</strong>
+        </div>
+      </div>
+
+      <div class="dhyana-section-title">Dhyāna Śloka · ध्यान श्लोक</div>
+      <div class="dhyana-verse">
+        सिन्दूरारुणविग्रहां त्रिनयनां माणिक्यमौलिस्फुरत्<br>
+        तारानायकशेखरां स्मितमुखीमापीनवक्षोरुहाम् ।<br>
+        पाणिभ्यामलिपूर्णरत्नचषकं रक्तोत्पलं बिभ्रतीं<br>
+        सौम्यां रत्नघटस्थरक्तचरणां ध्यायेत्परामम्बिकाम् ॥
+      </div>
+      <div class="dhyana-translation">
+        Meditate upon the supreme Ambikā — of vermilion-red form, three-eyed,
+        crowned with a ruby diadem from which the moon-lord shines,
+        smiling, with full and prominent breasts, holding in her hands
+        a gem-studded cup filled with wine and a red lotus,
+        benign, her red feet resting on a jewelled pot.
+      </div>
+
+      <hr class="section-rule">
+
+      <div class="dhyana-section-title">Pañcadaśī Mantra · पञ्चदशी मन्त्र</div>
+      <div class="dhyana-verse">
+        क — ए — ई — ल — ह्रीं<br>
+        ह — स — क — ह — ल — ह्रीं<br>
+        स — क — ल — ह्रीं
+      </div>
+      <div class="dhyana-translation">
+        The Pañcadaśī — the fifteen-syllabled Mantra of Śrī Vidyā —
+        in three Kūṭas (groups): the Vāgbhava, the Kāmarāja, and the Śakti Kūṭas.
+        This is the root mantra from which the entire Lalitā Sahasranāma unfolds.
+      </div>
+
+      <hr class="section-rule">
+
+      <div class="dhyana-section-title">Ṣoḍaśī Mantra · षोडशी मन्त्र</div>
+      <div class="dhyana-verse">
+        ऐं ह्रीं श्रीं ऐं क्लीं सौः
+      </div>
+      <div class="dhyana-translation">
+        The Ṣoḍaśī — the sixteen-syllabled Mantra —
+        the supreme Mantra of Śrī Lalitā Tripurasundarī.
+        <em>Aiṃ</em> (Vāgbhava) · <em>Hrīṃ</em> (Kāmarāja) · <em>Śrīṃ</em> (Śakti) ·
+        <em>Aiṃ Klīṃ Sauḥ</em> (the sixteenth syllable of completion).
+      </div>
+
+      <hr class="section-rule">
+
+      <div class="dhyana-section-title">The Final Invocation · अन्तिम आह्वान</div>
+      <blockquote>
+        "She is known well by all — even by children and cowherds (<em>ābalagopā</em>).
+        Her commands are not disobeyed by anyone. She abides in the Śrīcakra, king of all cakras.
+        She is the divine Tripurasundarī. She is the auspicious Śivā. She is the union of Śiva
+        and Śakti in one form. She is <em>Lalitāmbikā</em> — the divine Mother Lalitā."
+        <cite>— Brahmāṇḍa Purāṇa, Uttarabhāga, Lalitā Sahasranāma, Nāmas 994–1000</cite>
+      </blockquote>
+
+      <div class="dhyana-section-title">Phalaśruti · फलश्रुति</div>
+      <div class="dhyana-verse">
+        श्रीं ह्रीं ऐं ॐ<br>
+        एवं श्रीललितादेव्या नाम्नां साहस्रकं जगुः
+      </div>
+      <div class="dhyana-translation">
+        <em>Śrīṃ Hrīṃ Aiṃ Oṃ</em> — Thus were sung the thousand names of Śrī Lalitā Devī.
+      </div>
+
+    </div>
+  </div><!-- /tab-dhyana -->
+
+  <!-- ═══════════════════════════════════════════════
+       TAB 2 · Nāmas 973–1000
+  ═══════════════════════════════════════════════ -->
+  <div id="tab-namas" class="tab-panel">
+    <div class="content-wrap">
+
+      <div class="hero">
+        <div class="om-mantra">नाम-सहस्रम् · अन्तिम भागः</div>
+        <div class="subtitle-line">Lalitā Sahasranāma · Final Section</div>
+        <h1>Nāmas <strong>973–1000</strong></h1>
+        <div class="namas-range">The Closing Names · Mudrās · Jñāna · The Final Triad</div>
+        <p class="summary">
+          The twenty-eight closing names bring together the Goddess as pure mind,
+          as the one pleased by Bindu-offerings, as the mother of the Tripuras,
+          as worshipped by the ten Mudrās, as knowledge and its object, as Yoni Mudrā,
+          as Trikhaṇḍeśī, as Triguṇā, as Ambā, as sinless, as compassion incarnate,
+          and finally as Śivaśakti in eternal union — Lalitāmbikā.
+        </p>
+      </div>
+
+      <div class="page-marker">Page 1 · Section I · Nāmas 973–980</div>
+
+      <div class="section-hd">
+        <div class="deva-title">शुद्धमानसा — त्रिपुराश्रीवशङ्करी</div>
+        <h2>Pure Mind · Bindu Offerings · The Tripuras</h2>
+        <div class="scope">Purity of Mind · Cosmic Priority · The Three Enclosures · Ten Mudrā Worship · Jñāna Forms</div>
+      </div>
+
+      <div class="nama-hero">
+        <div class="nama-num">Nāma 973</div>
+        <div class="nama-deva">शुद्धमानसा</div>
+        <div class="nama-roman">Śuddha-mānasā</div>
+        <div class="nama-gloss">She who is of pure mind; one who purifies the mind of her worshippers</div>
+        <p class="commentary">
+          The Goddess's mind — if we may speak of it thus — is entirely without the impurities
+          that cloud the human mind: desire, aversion, confusion, pride, envy, craving.
+          Her consciousness is pure awareness without the distortions of ego-driven thought.
+          More precisely: she IS pure mind — the mind as it would be if it had never been
+          obscured by self-ignorance. To worship her is to be drawn toward this purity.
+          The name resonates with the entire Śuddhavidyā tradition: the path of pure knowledge
+          as the direct means to recognizing one's own nature as the Goddess.
+        </p>
+        <div class="tags">
+          <span class="tag">Purity</span>
+          <span class="tag">Śuddhavidyā</span>
+          <span class="tag">Mind</span>
+        </div>
+      </div>
+
+      <table class="nama-table">
+        <tbody>
+          <tr>
+            <td>974</td>
+            <td>बिन्दुतर्पणसन्तुष्टा</td>
+            <td><em>Bindu-tarpaṇa-santuṣṭā</em> — She who is pleased by offerings to the Bindu — the central point of the Śrī Cakra. The Bindu is the most sacred locus of the Śrī Cakra: the single, dimensionless point from which the entire geometric expansion of the Cakra emanates, and to which it returns. It is the seat of the Goddess herself. To offer worship specifically at the Bindu — the innermost point — is the most intimate and direct form of Cakra-worship, and the Goddess receives it with complete satisfaction.</td>
+          </tr>
+          <tr>
+            <td>975</td>
+            <td>पूर्वजा</td>
+            <td><em>Pūrvajā</em> — She who is ahead of everyone; She who was born first. As the source of all cosmic emergence, the Goddess precedes every other principle. Brahmā, Viṣṇu, Śiva — all emerge from her. Even the primordial Māyā that is the ground of creation is her own power. There is no "before" the Goddess; she alone is prior to everything else.</td>
+          </tr>
+          <tr>
+            <td>976</td>
+            <td>त्रिपुराम्बिका</td>
+            <td><em>Tripurāmbikā</em> — She who is the mother of the Tripuras — the three cities (or three worlds). <em>Tri-pura</em> simultaneously denotes the three worlds (earth, atmosphere, heaven), the three bodies (gross, subtle, causal), and the three states (waking, dream, deep sleep). As <em>Ambikā</em> (mother) of all three, the Goddess is the generative source of every dimension of conditioned existence. This is also the specific name used throughout Adhyāya 40 (Chapter 40 of this Uttarabhāga) as the Goddess appears to Daśaratha in his dream.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="nama-hero">
+        <div class="nama-num">Nāma 977</div>
+        <div class="nama-deva">दशमुद्रासमाराध्या</div>
+        <div class="nama-roman">Daśa-mudrā-samārādhyā</div>
+        <div class="nama-gloss">She who is worshipped by the ten Mudrās</div>
+        <p class="commentary">
+          The ten Mudrās of the Śrī Vidyā tradition are the ten mystical finger-gestures
+          (described in detail in Adhyāya 42) by which the Goddess is propitiated during
+          the inner worship of the Śrī Cakra. They are: <em>Sarvasaṅkṣobhiṇī</em> (the Agitator),
+          <em>Sarvavidrāviṇī</em> (the Router), <em>Sarvākarṣiṇī</em> (the Attractor),
+          <em>Sarvavaśankari</em> (the Subjugator), <em>Sarvonmādinī</em> (the Intoxicator),
+          <em>Sarvamahāṅkuśā</em> (the Great Goad), <em>Sarvakhecarī</em> (the Sky-Traveller),
+          <em>Sarvabīja</em> (the Universal Seed), <em>Sarvayoni</em> (the Universal Womb),
+          and <em>Sarvatrikhaṇḍā</em> (the Triple Division). Together, these ten Mudrās
+          constitute the complete gesture-worship of the Śrī Cakra, each corresponding to
+          a specific power of the Goddess and a specific circle of the Cakra.
+        </p>
+        <div class="tags">
+          <span class="tag">Ten Mudrās</span>
+          <span class="tag">Śrī Cakra</span>
+          <span class="tag">Worship</span>
+        </div>
+      </div>
+
+      <table class="nama-table">
+        <tbody>
+          <tr>
+            <td>978</td>
+            <td>त्रिपुराश्रीवशङ्करी</td>
+            <td><em>Tripurāśrī-vaśaṅkarī</em> — She for whom Tripurāśrī is under control. Tripurāśrī is the name of the Goddess of beauty and prosperity who presides over the ninth Āvaraṇa of the Śrī Cakra — the most exalted of the inner enclosures. That she is "under control" of Lalitā indicates the complete hierarchical sovereignty of the supreme Goddess over all her manifestations and emanations. Even the most glorious of the inner circle-goddesses is her servant.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-marker">Page 2 · Section II · Nāmas 979–990</div>
+
+      <div class="section-hd">
+        <div class="deva-title">ज्ञानमुद्रा — अभ्यासातिशयज्ञाता</div>
+        <h2>Jñāna Mudrā · Knowledge and Known · Yoni Mudrā · Triguṇā · Ambā</h2>
+        <div class="scope">Knowledge Forms · The Triad of Guṇas · Mother of All · The Triangle · Sinlessness · Marvellous Deeds · Strenuous Practice</div>
+      </div>
+
+      <div class="nama-hero">
+        <div class="nama-num">Nāma 979</div>
+        <div class="nama-deva">ज्ञानमुद्रा</div>
+        <div class="nama-roman">Jñāna-mudrā</div>
+        <div class="nama-gloss">She who is in the form of the Jñāna Mudrā</div>
+        <p class="commentary">
+          The <em>Jñāna Mudrā</em> — the gesture of knowledge — is the mudra in which the
+          index finger curls to touch the tip of the thumb, forming a circle, while the other
+          three fingers remain extended. It is the defining gesture of the teacher of wisdom,
+          seen on images of Dakṣiṇāmūrti — Śiva as the silent teacher. The Goddess herself
+          IS this gesture: she is the form of wisdom-knowledge, not merely a possessor of it.
+          Her very being is the gesture by which knowledge recognizes itself.
+        </p>
+        <div class="tags">
+          <span class="tag">Jñāna</span>
+          <span class="tag">Teaching</span>
+          <span class="tag">Mudrā</span>
+        </div>
+      </div>
+
+      <table class="nama-table">
+        <tbody>
+          <tr>
+            <td>980</td>
+            <td>ज्ञानगम्या</td>
+            <td><em>Jñāna-gamyā</em> — She who is to be attained through the yoga of knowledge — through <em>Jñāna Yoga</em>, the path of direct enquiry into the nature of consciousness. While the Goddess is accessible through devotion (<em>bhakti</em>), through ritual (<em>karma</em>), and through Mantra-practice, this name establishes that the ultimate attainment of her is through direct knowledge — the recognition that one's own nature is not different from hers.</td>
+          </tr>
+          <tr>
+            <td>981</td>
+            <td>ज्ञानज्ञेयस्वरूपिणी</td>
+            <td><em>Jñāna-jñeya-svarūpiṇī</em> — She who is both knowledge (<em>jñāna</em>) and the known (<em>jñeya</em>). This nāma is the Sahasranāma's most compressed statement of non-duality: in the Goddess, the subject of knowing and the object of knowing are identical. She is simultaneously the knowing and the known — the light of awareness and the object illumined by it. The dualism of knower, knowing, and known dissolves into her single being.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="nama-hero">
+        <div class="nama-num">Nāma 982</div>
+        <div class="nama-deva">योनिमुद्रा</div>
+        <div class="nama-roman">Yoni-mudrā</div>
+        <div class="nama-gloss">She who is in the form of the Yoni Mudrā</div>
+        <p class="commentary">
+          The <em>Yoni Mudrā</em> — the gesture of the womb and source — is the most sacred of
+          all the Mudrās in the Śrī Vidyā tradition. It represents the divine feminine creative
+          principle: the Yoni as the source of all creation, the womb from which all worlds emerge.
+          Adhyāya 42 describes it: "The tips of the middle fingers are kept bent and placed
+          above the index-fingers. Similarly, the small fingers are placed in the middle of ring
+          fingers. All the fingers are thus joined together and pressed by the thumbs."
+          The Goddess does not merely perform this Mudrā — she IS it: her very nature is
+          the cosmic Yoni from which all existence springs.
+        </p>
+        <div class="tags">
+          <span class="tag">Yoni Mudrā</span>
+          <span class="tag">Creation</span>
+          <span class="tag">Divine Womb</span>
+        </div>
+      </div>
+
+      <table class="nama-table">
+        <tbody>
+          <tr>
+            <td>983</td>
+            <td>त्रिखण्डेशी</td>
+            <td><em>Trikhaṇḍeśī</em> — She who is the ruler of the tenth Mudrā, the Trikhaṇḍā. The Trikhaṇḍā (three-part or three-division) Mudrā is associated with the Āvāhanī gesture described in Adhyāya 42 as "having three parts." As Trikhaṇḍeśī, the Goddess rules over the entirety of the triple division that underlies all of manifested existence — the three Kūṭas of the Pañcadaśī Mantra, the three Guṇas, the three worlds.</td>
+          </tr>
+          <tr>
+            <td>984</td>
+            <td>त्रिगुणा</td>
+            <td><em>Triguṇā</em> — She who is endowed with the three Guṇas of Sattva (clarity), Rajas (activity), and Tamas (inertia). While nāma 789 (<em>Nistraiguṇyā</em>) declares her beyond the three Guṇas, here she encompasses and embodies all three. Both are simultaneously true: she transcends the Guṇas (as the ground in which they appear) and she manifests through them (as all of creation). The Sahasranāma holds both truths without contradiction.</td>
+          </tr>
+          <tr>
+            <td>985</td>
+            <td>अम्बा</td>
+            <td><em>Ambā</em> — She who is the mother of all beings; the mother of the universe. One of the most ancient and beloved names of the Goddess, simple and absolute: Mother. After all the cosmic epithets, the esoteric mudra-names, and the philosophical descriptions, the Sahasranāma returns once again to this irreducible fact: she is Ambā — the Mother.</td>
+          </tr>
+          <tr>
+            <td>986</td>
+            <td>त्रिकोणगा</td>
+            <td><em>Trikoṇa-gā</em> — She who resides in the triangle. The innermost enclosure of the Śrī Cakra is the downward-pointing triangle (<em>trikona</em>) at its centre, just surrounding the Bindu. This is the Goddess's primary geometric abode within the Śrī Cakra — the triangle that represents the Yoni, the source, the divine feminine creative power. The Adhyāya 44 description of Nyāsa places the Cakreśvarī (Cakra-goddess) specifically "after making a triangle."</td>
+          </tr>
+          <tr>
+            <td>987</td>
+            <td>अनघा</td>
+            <td><em>Anaghā</em> — She who is sinless; She who is without the stain of any transgression. The Goddess is entirely beyond karma and its consequences: she has no past actions that could produce binding results, no future results that could restrict her freedom. She is the eternally pure, the permanently unstained. Significantly, it is with this name of sinlessness that the Goddess addresses both Pārvatī and Daśaratha in Adhyāya 40: "O sinless Daśaratha" — recognizing in them the quality that is her own nature.</td>
+          </tr>
+          <tr>
+            <td>988</td>
+            <td>अद्भुतचारित्रा</td>
+            <td><em>Adbhuta-cāritrā</em> — She whose deeds are marvellous; She who performs actions that fill the universe with wonder. The entirety of Adhyāya 40's narrative — the reunion of Śiva and Pārvatī through Kāmākṣī's grace, the liberation of Bhairava from Brahmahatyā, the granting of sons to Daśaratha — are expressions of this <em>adbhuta cāritra</em>: the wonderful, extraordinary, awe-inspiring conduct that is the natural expression of the supreme Goddess's sovereignty.</td>
+          </tr>
+          <tr>
+            <td>989</td>
+            <td>वाञ्छितार्थप्रदायिनी</td>
+            <td><em>Vāñchitārtha-pradāyinī</em> — She who gives all the desired objects; the bestower of all that is wished for. This name recapitulates the central promise of Adhyāya 40: Kāmākṣī fulfils the desires of all who approach her with devotion. The scope of "desired objects" ranges from material prosperity and children (as in Daśaratha's case) to liberation itself (as in Bhairava's case) — whatever is the genuine, deep desire of the devotee, the Goddess fulfils it completely.</td>
+          </tr>
+          <tr>
+            <td>990</td>
+            <td>अभ्यासातिशयज्ञाता</td>
+            <td><em>Abhyāsātiśaya-jñātā</em> — She who is known only through exceedingly strenuous spiritual practice. The word <em>abhyāsa</em> = practice, repetition; <em>atiśaya</em> = exceeding, extraordinary. The Goddess is not accessible to the casual or intermittent seeker. She reveals herself only to those who pursue her with the total dedication of a Bhairava meditating at Kāñcī — described in Adhyāya 40 as a meditation more profound than any performed by Brahmā, Viṣṇu, Kapila, Sanaka, or Śuka.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="page-marker">Page 3 · Section III · Nāmas 991–1000</div>
+
+      <div class="section-hd">
+        <div class="deva-title">षडध्वातीतरूपिणी — ललिताम्बिका</div>
+        <h2>Beyond Six Paths · Pure Compassion · Darkness-Dispelling Lamp · The Final Triad</h2>
+        <div class="scope">Six Paths Transcended · Compassion Incarnate · Lamp of Knowledge · Known by All · Commands Not Disobeyed · Śrīcakra Dweller · The Union of Śiva and Śakti · Lalitāmbikā</div>
+      </div>
+
+      <table class="nama-table">
+        <tbody>
+          <tr>
+            <td>991</td>
+            <td>षडध्वातीतरूपिणी</td>
+            <td><em>Ṣaḍadhvātīta-rūpiṇī</em> — She whose form transcends the six paths. The six paths (<em>ṣaḍadhva</em>) are the six modes of cosmic manifestation recognized in the Śaiva-Śākta tradition: three objective paths (Kalā, Tattva, Bhuvana) and three subjective paths (Varṇa, Mantra, Pada). Every dimension of created existence is encompassed by these six paths — yet the Goddess in her supreme nature transcends all of them. She is the ground in which the six paths appear, not a being confined to any of them.</td>
+          </tr>
+          <tr>
+            <td>992</td>
+            <td>अव्याजकरुणामूर्तिः</td>
+            <td><em>Avyāja-karuṇā-mūrtiḥ</em> — She who is pure compassion; She who is the embodiment of compassion without pretext or artifice. <em>Avyāja</em> = without ulterior motive, without pretence, pure and spontaneous. The Goddess's compassion is not conditional, not strategic, not given in exchange for devotion — it is the natural, unconditional overflow of her nature. The entire narrative of Adhyāya 40 — her liberation of Bhairava from Brahmahatyā, her grace to Pārvatī, her boon to Daśaratha — is the story of this spontaneous, unmotivated compassion at work.</td>
+          </tr>
+          <tr>
+            <td>993</td>
+            <td>अज्ञानध्वान्तदीपिका</td>
+            <td><em>Ajñāna-dhvānta-dīpikā</em> — She who is the bright lamp that dispels the darkness of ignorance. The image of the lamp in the darkness is perhaps the most universal in all mystical traditions: the lamp of wisdom dispelling the darkness of ignorance. The Goddess is not merely the one who holds such a lamp — she IS the lamp itself. Her very nature is the light that makes ignorance impossible. Adhyāya 43 elaborates: the preceptor who grants Dīkṣā (initiation) is himself the Goddess in human form — "a lamp in a place where no wind blows."</td>
+          </tr>
+          <tr>
+            <td>994</td>
+            <td>आबालगोपविदिता</td>
+            <td><em>Ābālagopa-viditā</em> — She who is known well by all, even by children and cowherds. The great paradox of the Goddess: nāma 990 declares she is known only through the most strenuous spiritual practice, while nāma 994 declares she is known by children and cowherds. Both are true: she is supremely difficult to attain through intellectual effort alone, yet she is completely open and transparent to the innocent, the simple-hearted, and the loving. The complexity of the philosophies is dissolved by the simplicity of the heart's direct recognition.</td>
+          </tr>
+          <tr>
+            <td>995</td>
+            <td>सर्वानुल्लङ्घ्यशासना</td>
+            <td><em>Sarvānullaṅghya-śāsanā</em> — She whose commands are not disobeyed by anyone; She whose rule none can transgress. Brahmā, Viṣṇu, Śiva — all operate within the boundaries she sets. Even the most powerful cosmic forces — Kāla, Māyā, the Guṇas — are her ministers, not her superiors. Adhyāya 43 states it plainly: "In all Vedas and scriptural texts it is mentioned that Śrīkāmākṣī is greater than the greatest among Brahmā, Viṣṇu, Śiva and others."</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="nama-hero">
+        <div class="nama-num">Nāma 996</div>
+        <div class="nama-deva">श्रीचक्रराजनिलया</div>
+        <div class="nama-roman">Śrīcakra-rāja-nilayā</div>
+        <div class="nama-gloss">She who abides in the Śrīcakra, the king of all cakras</div>
+        <p class="commentary">
+          The Śrī Cakra — the nine-triangle geometric diagram formed by the intersection of
+          four upward-pointing Śiva-triangles and five downward-pointing Śakti-triangles,
+          surrounded by two lotus-circles (of eight and sixteen petals) and three concentric
+          squares — is the supreme Yantra, the "king of all cakras." The Goddess resides in
+          it not as a guest but as its very essence: the Śrī Cakra IS the Goddess made
+          geometric, and the Goddess IS the Śrī Cakra made conscious. Adhyāya 40 describes
+          her at Kāñcī specifically as present "in the form of Śrīcakra."
+        </p>
+        <div class="tags">
+          <span class="tag">Śrī Cakra</span>
+          <span class="tag">King of Cakras</span>
+          <span class="tag">Kāñcīpura</span>
+        </div>
+      </div>
+
+      <table class="nama-table">
+        <tbody>
+          <tr>
+            <td>997</td>
+            <td>श्रीमत्त्रिपुरसुन्दरी</td>
+            <td><em>Śrīmat-Tripurasundarī</em> — She who is the divine Tripurasundarī Devī; She who is the auspicious, resplendent beauty of the three Tripuras. This is her grandest title, the name that runs through the entire Uttarabhāga: <em>Mahātripurasundarī</em>. Here at the penultimate moment of the Sahasranāma, before the final triad, she is named by her fullest, most exalted title: the one whose beauty encompasses all three worlds and outshines everything within them.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="nama-hero">
+        <div class="nama-num">Nāma 998</div>
+        <div class="nama-deva">श्रीशिवा</div>
+        <div class="nama-roman">Śrī-Śivā</div>
+        <div class="nama-gloss">She who is the auspicious and divine Śivā</div>
+        <p class="commentary">
+          The penultimate triad begins: <em>Śrīśivā</em>. The feminine form of Śiva — not the
+          wife of Śiva (that would be Śivānī or Śivā as consort) but the Goddess who IS Śiva
+          in her feminine aspect: the auspiciousness (<em>śiva</em> = the auspicious one) that
+          is her very nature. The <em>Śrī</em> prefix adds the sense of divine wealth, royal
+          splendour, and sacred prestige. She is the most auspicious of the auspicious:
+          the very principle of auspiciousness made conscious.
+        </p>
+        <div class="tags">
+          <span class="tag">Auspiciousness</span>
+          <span class="tag">Śivā-form</span>
+          <span class="tag">Divine</span>
+        </div>
+      </div>
+
+      <div class="nama-hero">
+        <div class="nama-num">Nāma 999</div>
+        <div class="nama-deva">शिवशक्तैक्यरूपिणी</div>
+        <div class="nama-roman">Śiva-Śaktaikya-rūpiṇī</div>
+        <div class="nama-gloss">She who is the union of Śiva and Śakti into one form</div>
+        <p class="commentary">
+          The second of the final three and the theological apex of the entire Sahasranāma.
+          <em>Śiva-Śakti-aikya</em> = the oneness (<em>aikya</em>) of Śiva and Śakti — not
+          their cooperation, not their marriage, not their interplay, but their absolute
+          identity. The Goddess is the form of this identity. This name encapsulates the
+          entire teaching of Kashmir Śaivism and the Śākta Tantra tradition: consciousness
+          (<em>Śiva</em>) and power (<em>Śakti</em>) are not two realities that have come
+          together — they are one reality that appears as two only from the perspective of
+          the limited mind. In the Goddess herself, this apparent duality is seen for what
+          it is: a distinction within a single, undivided being.
+        </p>
+        <div class="tags">
+          <span class="tag">Union</span>
+          <span class="tag">Non-Duality</span>
+          <span class="tag">Śiva-Śakti</span>
+          <span class="tag">Apex Name</span>
+        </div>
+      </div>
+
+      <div class="nama-hero">
+        <div class="nama-num">Nāma 1000</div>
+        <div class="nama-deva">ललिताम्बिका</div>
+        <div class="nama-roman">Lalitāmbikā</div>
+        <div class="nama-gloss">She who is the divine Mother Lalitā</div>
+        <p class="commentary">
+          The final name. After nine hundred and ninety-nine elaborations — philosophical,
+          cosmological, devotional, esoteric, mythological, sonic — the Sahasranāma arrives
+          at its destination: <em>Lalitāmbikā</em>. She who is the spontaneous (<em>lalita</em>
+          = sportive, playful, effortless, beautiful) Mother (<em>ambikā</em>). The entire
+          cosmos is her effortless play. The entire Sahasranāma is her name spoken aloud.
+          Every nāma has been a facet of this single inexhaustible gem: Lalitāmbikā —
+          the divine Mother who plays.
+        </p>
+        <div class="tags">
+          <span class="tag">Final Nāma</span>
+          <span class="tag">Lalitā</span>
+          <span class="tag">Divine Play</span>
+          <span class="tag">Mother</span>
+        </div>
+      </div>
+
+      <div class="colophon-block">
+        <span class="bija">श्रीं ह्रीं ऐं ॐ</span>
+        <div class="deva-colophon">
+          एवं श्रीललितादेव्या नाम्नां साहस्रकं जगुः
+        </div>
+        <div class="roman-colophon">
+          Thus were sung the thousand names of Śrī Lalitā Devī.
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /tab-namas -->
+
+  <!-- ═══════════════════════════════════════════════
+       TAB 3 · Adhyāya 40
+  ═══════════════════════════════════════════════ -->
+  <div id="tab-adhyaya40" class="tab-panel">
+    <div class="content-wrap">
+
+      <div class="adhyaya-header">
+        <div class="num">Adhyāya 40 · Brahmāṇḍa Purāṇa · Uttarabhāga</div>
+        <div class="deva">कामाक्षीमाहात्म्यम्</div>
+        <h3>Greatness of Kāmākṣī</h3>
+        <div class="scope">Pārvatī's Penance at Kāñcī · Bhairava's Liberation from Brahmahatyā · Daśaratha's Sons · The Grace of Kāmākṣī</div>
+      </div>
+
+      <div class="adhyaya-body">
+
+        <div class="verse-intro">Verses 1–2 · Agastya's Question</div>
+        <div class="speaker">Agastya said:</div>
+        <p>What are the different sportive and gracious activities of Mahātripurasundarī who is installed on the pedestal of Kāmakoṣṭha and who is well-renowned as Kāmākṣī? That goddess Mahātripurasundarī who is Maheśvarī herself is well known as Śrīkāmākṣī. She is stationed in the terrestrial sphere. What are the activities of this goddess? O most eloquent one, recount to me her divine life.</p>
+
+        <div class="verse-intro">Verses 3–9 · The Primordial Sovereignty of Mahālakṣmī</div>
+        <div class="speaker">Hayagrīva said:</div>
+        <p>Although she is stationed here on the earth, O Pot-born Sage, she abides in the heart of everyone. She bestows the fruit of acts on all embodied beings in accordance with their different activities. Whatever happens in the world is the result of her activities. One may think something, but she disposes of it freely in accordance with her will.</p>
+        <p>The Śaktis beginning with Tripurā are her own incarnations. She herself was Mahālakṣmī. She created three eggs formerly. Those eggs were the abode of the three great Devas as well as the three Śaktis. From one egg were born Ambikā and Puruṣottama; from another egg were born Śrī and Viriñca (Brahmā); and from the other were born the goddess of speech and Śiva. Maheśvarī united Indirā with Mukunda, joined Parameśāna with Pārvatī, and joined Pitāmaha with Sarasvatī. She employed Brahmā in creation, Vāsudeva in sustenance, and the three-eyed lord in annihilation. All these stay in Brahmaloka, Vaikuṇṭha, and Kailāsa, always meditating on Mahālakṣmī, the bestower of welfare.</p>
+
+        <div class="verse-intro">Verses 10–45 · Pārvatī's Penance · The Reunion</div>
+        <p>Once goddess Pārvatī was sporting about on the splendid peak of Kailāsa and closed the two eyes of Maheśa. Since the Sun and Moon were his two eyes, the whole of the three worlds became enveloped in darkness. The sages abandoned their penances; the Vedic rites were ruined. Lord Rudra directed Pārvatī to expiate by performing penance — first at Kāśī, then at Kāñcīpura on the banks of the Kampā river, propitiating the eternal Kāmākṣī.</p>
+        <p>Pārvatī acted accordingly. By the penance of long duration, she became afflicted but her heart did not turn away. Kāmākṣī manifested herself in front of Śivā with the refulgence of ten thousand rising suns, bedecked in all ornaments, holding noose, goad, sugarcane bow, and five arrows — the creator of two universes. She declared: "Where is the difference between you and me? Undoubtedly you are I myself. This is but a sport, a great fascination unto the entire world." Even as Pārvatī was eulogising her, the Goddess entered the heart of the delighted Pārvatī.</p>
+
+        <blockquote>
+          "Dear one, obtain Rudra as your husband as desired by you mentally. For the sake of defending everything in the world, follow my instructions. Where is the difference between you and me? Undoubtedly you are I myself. What sin can there be in your case, O lady of great felicity? Indeed you are the destroyer of sins."
+          <cite>— Kāmākṣī to Pārvatī, Adhyāya 40, verse 27–30</cite>
+        </blockquote>
+
+        <div class="verse-intro">Verses 46–86 · Bhairava's Liberation from Brahmahatyā</div>
+        <p>The three deities gathered in the assembly of Brahmā. Both Brahmā and Śiva had five faces, and an argument arose between the five-faced Brahmā and Viṣṇu about personal superiority. Śiva appeared as a great column of fire. Brahmā showed disregard. From the anger of both was born Bhairava, who plucked off one of Brahmā's heads with his nail. The skull of Brahmā stuck to Bhairava's nail and would not fall — the sin of Brahmahatyā (Brāhmaṇa-slaughter) adhering to him.</p>
+        <p>Bhairava wandered over the whole earth visiting all holy spots, but was not released. After a long time he reached Kāñcī and served the great goddess Śrī. He bathed daily in the Pañcatīrtha, gradually becoming pure in heart. He performed an unbroken meditation on Śrī — "unbroken as the continuous flow of oil" — a meditation, Hayagrīva declares, that neither Brahmā nor Viṣṇu, nor Kapila, nor Sanaka, nor Śuka were competent to perform.</p>
+        <p>The Goddess appeared at midnight: "O Śrīkaṇṭha, what is the sin unto you? You are identical with my form. By tomorrow you will be instantaneously liberated." The next morning, after bathing and Sandhyā rites, Bhairava dipped himself in the sacred lake at the Goddess's command — and emerged in Gaṅgā at Kāśī. There he saw a woman of the same form as Kāmākṣī who gave him alms as a refulgent mass of splendour and vanished. Instantaneously Brahmā's skull dropped from the tip of his nail. Hara was liberated from his difficulty through the power of the Goddess.</p>
+
+        <div class="verse-intro">Verses 87–137 · Daśaratha's Sons</div>
+        <p>Daśaratha, king of Ayodhyā, long without a son, consulted his priest Vasiṣṭha. Vasiṣṭha named the six most meritorious cities — Ayodhyā, Mathurā, Māyā, Kāśī, Kāñcī, and Avantikā — and directed him to worship Tripurāmbikā at Kāñcī. Daśaratha worshipped Lalitā Parameśvarī daily with devoted mind. At midnight, the Goddess appeared to him in a dream: "Go to Kāñcīpura. Bathe in the Kampā. See me at the Kāmakoṣṭha — the destroyer of sins with seven cavities, bestowing the three aims of human life."</p>
+        <p>The king set out with Kausalyā, bathed in the Kampā and Pañcatīrtha, circumambulated three times, prostrated with eight limbs, and offered the great Pūjā with sugar, honey, ghee, plantains, and milk puddings for seven days. On the eighth day, the ethereal voice of Kāmākṣī declared: "O king, four sons will be born to you. They will be my own parts."</p>
+
+        <blockquote>
+          "Kāmākṣī has such potentiality. She desires the welfare of all the worlds. She fulfils completely the desires of all her devotees. Who is competent to extol the greatness of this deity Śrīdevī? Neither I nor Śambhu, nor Brahmā nor Viṣṇu. What then about others?"
+          <cite>— Hayagrīva, Adhyāya 40, verses 138–141</cite>
+        </blockquote>
+
+        <div class="verse-intro">The Prayer of Daśaratha · Verses 124–129</div>
+        <p>The king's prayer to Kāmākṣī at the Kāmakoṣṭha — a complete devotional hymn describing the Goddess from feet to crown: lotus-feet rendered beautiful by anklet gems; golden girdle glittering above yellow robes; creeper-like arms with armlets and bangles; the Puṇḍra sugarcane bow in the left hand; flowery arrows in the right; white garlands over the curves of the breast; the conch-like neck sparkling with ruby necklaces; the crescent moon illuminating the forelocks; the subtle smile; the blue-lotus eyes; the golden crown inlaid with gems; and the lotus-feet served by Indra and all the Devas.</p>
+
+      </div>
+
+      <div class="footnotes">
+        <h4>Notes on Adhyāya 40</h4>
+        <ol>
+          <li>The Pārvatī–Kāmākṣī narrative is the mythological expression of the Śākta teaching that the highest divine power is identical with Pārvatī herself: "You are I myself."</li>
+          <li>The Bhairava liberation narrative has parallels in other Purāṇas but here is reoriented to glorify Kāmākṣī as the sole liberator — even Gaṅgā and all other tīrthas could not remove the sin.</li>
+          <li>The Daśaratha narrative has no basis in the Vālmīki Rāmāyaṇa. The translator's note acknowledges that "our author changed them to glorify Kāmākṣī."</li>
+          <li>The sons promised ("They will be my own parts") are the four Avatāras: Rāma, Bharata, Lakṣmaṇa, and Śatrughna — all declared to be partial manifestations of Kāmākṣī herself.</li>
+        </ol>
+      </div>
+
+    </div>
+  </div><!-- /tab-adhyaya40 -->
+
+  <!-- ═══════════════════════════════════════════════
+       TAB 4 · Adhyāya 42 — Mudrās
+  ═══════════════════════════════════════════════ -->
+  <div id="tab-adhyaya42" class="tab-panel">
+    <div class="content-wrap">
+
+      <div class="adhyaya-header">
+        <div class="num">Adhyāya 42 · Brahmāṇḍa Purāṇa · Uttarabhāga</div>
+        <div class="deva">विविधमुद्रावर्णनम्</div>
+        <h3>Description of Various Mudrās (Mystical Gestures)</h3>
+        <div class="scope">Note: This chapter deals with Mudrās specially observed in Śrīvidyā. The most important is Yonimudrā described in verses 17–18.</div>
+      </div>
+
+      <div class="prefatory">
+        Mudrās in the Śrī Vidyā tradition are not merely symbolic gestures — they are considered to be specific configurations of prāṇic energy that, when performed with the correct Mantra and meditative intent, directly evoke and propitiate the corresponding aspects of the Goddess in the Śrī Cakra. Agastya asks Hayagrīva to describe the various finger positions by which Śrīdevī becomes delighted.
+      </div>
+
+      <div class="mudra-card">
+        <div class="mudra-num">Mudrā 1</div>
+        <h4>त्रिखण्डा / आवाहनी</h4>
+        <div class="roman">Trikhaṇḍā / Āvāhanī — The Great Invoking Mudrā</div>
+        <p>Turn your hands making the palms face the front. Join your thumbs together. Keep the index-fingers bent and beneath the ring fingers. Place the small fingers in their own places. This is the great Mudrā <em>Āvāhanī</em> (the invoking one), also described as Trikhaṇḍā (having three parts). It is the gesture of summoning the divine presence — the opening gesture of all Śrī Vidyā worship.</p>
+      </div>
+
+      <div class="mudra-card">
+        <div class="mudra-num">Mudrā 2</div>
+        <h4>सङ्क्षोभिणी</h4>
+        <div class="roman">Saṃkṣobhiṇī — The Agitator</div>
+        <p>The middle fingers should be kept in the middle, flanked by the thumbs and small fingers. The index fingers are kept upright like rods. The ring fingers are placed over the middle fingers. This is <em>Saṃkṣobhiṇī</em> — the Agitator — corresponding to the first of the ten worship-Mudrās of nāma 977.</p>
+      </div>
+
+      <div class="mudra-card">
+        <div class="mudra-num">Mudrā 3</div>
+        <h4>विद्राविणी</h4>
+        <div class="roman">Vidrāviṇī — The Router</div>
+        <p>If in the Saṃkṣobhiṇī Mudrā the middle fingers are kept upright instead, the Mudrā becomes <em>Vidrāviṇī</em> — She who drives others away. This gesture corresponds to the routing of obstacles and opponents in the worship-sequence.</p>
+      </div>
+
+      <div class="mudra-card">
+        <div class="mudra-num">Mudrā 4</div>
+        <h4>आकर्षिणी</h4>
+        <div class="roman">Ākarṣiṇī — The Attractor</div>
+        <p>The small fingers and ring fingers are equally kept in the middle of the middle fingers and the index fingers that have the shape of goads. This Mudrā named <em>Ākarṣiṇī</em> is capable of attracting the three worlds.</p>
+      </div>
+
+      <div class="mudra-card">
+        <div class="mudra-num">Mudrā 5</div>
+        <h4>उन्मादिनी</h4>
+        <div class="roman">Unmādinī — The Intoxicator</div>
+        <p>The palms are made in the shape of cups. The index fingers have the shape of goads. The middle fingers are turned and kept beneath them. The small fingers are in the middle of the middle fingers. The ring fingers are kept upright. The two index fingers are outside them. The thumbs are kept upright like rods reaching the place where the middle fingers move. This Mudrā is Unmādinī — O Scorcher of Vātāpi.</p>
+      </div>
+
+      <div class="mudra-card">
+        <div class="mudra-num">Mudrā 6</div>
+        <h4>महाङ्कुशा</h4>
+        <div class="roman">Mahāṅkuśā — The Great Goad</div>
+        <p>In this Mudrā, in the pair of ring fingers, one is bent in the form of a goad and kept beneath. The devotee shall use the index fingers also in the same manner. This is the Mudrā called <em>Mahāṅkuśā</em>, conducive to the achievement of all objectives.</p>
+      </div>
+
+      <div class="mudra-card">
+        <div class="mudra-num">Mudrā 7</div>
+        <h4>खेचरी</h4>
+        <div class="roman">Khecarī — Sky-Traveller</div>
+        <p>The arms are kept crossed — the right arm to the left and the left arm to the right. The palms of the hands are turned. The small fingers and ring fingers are joined. The index fingers are placed over them. The middle fingers are above all. The thumbs are kept upright. This is the Mudrā called <em>Khecarī</em> — moving in the sky — the most excellent of all excellent ones. By knowing this alone perfectly, the devotee shall be the favourite of the Yoginīs.</p>
+      </div>
+
+      <div class="mudra-card">
+        <div class="mudra-num">Mudrā 8</div>
+        <h4>बीजमुद्रा</h4>
+        <div class="roman">Bījamudrā — Seed Gesture</div>
+        <p>The devotee turns the palms touching each other. He joins together the pairs of index fingers and thumbs simultaneously in the form of the crescent Moon. He joins the middle fingers together keeping the small fingers hanging down. After joining together these two fingers that are bent, the ring fingers are kept beneath all. This is <em>Bījamudrā</em>, conducive to the proper functioning of all Siddhis.</p>
+      </div>
+
+      <div class="mudra-card">
+        <div class="mudra-num">Mudrā 9 · The Supreme</div>
+        <h4>योनिमुद्रा</h4>
+        <div class="roman">Yonimudrā — The Womb Gesture (Nāma 982)</div>
+        <p>The tips of the middle fingers are kept bent and placed above the index-fingers. Similarly, the small fingers are placed in the middle of ring fingers. All the fingers are thus joined together and pressed by the thumbs. This is the first Mudrā termed <em>Yonimudrā</em>. It is the paramount Mudrā of the Śrī Vidyā tradition, representing the divine creative source — the Yoni as the cosmic womb of all creation — and corresponding directly to nāma 982 of the Sahasranāma.</p>
+      </div>
+
+      <div class="floret">❧</div>
+
+      <div class="prefatory">
+        These Mudrās cause delight unto Śrīdevī. They should be made use of at the time of worship in the proper order. Together with the ten worship-Mudrās of nāma 977, they constitute the complete gestural dimension of Śrī Cakra worship — a language of the hands that speaks directly to the Goddess without the mediation of words.
+      </div>
+
+    </div>
+  </div><!-- /tab-adhyaya42 -->
+
+  <!-- ═══════════════════════════════════════════════
+       TAB 5 · Adhyāya 43 — Dīkṣā
+  ═══════════════════════════════════════════════ -->
+  <div id="tab-adhyaya43" class="tab-panel">
+    <div class="content-wrap">
+
+      <div class="adhyaya-header">
+        <div class="num">Adhyāya 43 · Brahmāṇḍa Purāṇa · Uttarabhāga</div>
+        <div class="deva">दीक्षाप्रकारः गुरुसेवा च</div>
+        <h3>Types of Initiation and True Service of the Preceptor</h3>
+        <div class="scope">Sparśa-dīkṣā · Dṛg-dīkṣā · Śāmbhavī · Mānasī · Kriyā-dīkṣā · The Thousand-Syllabled Mantra · The Guru as Śiva · The Code of the Disciple</div>
+      </div>
+
+      <div class="adhyaya-body">
+
+        <div class="verse-intro">Verses 2–8 · The Four Types of Initiation</div>
+        <p>Hayagrīva describes four modes of Dīkṣā (initiation), progressing from the outer to the innermost:</p>
+
+        <div class="sonic-card">
+          <h4>1 · Sparśa-dīkṣā — Initiation by Touch</h4>
+          <p>The preceptor meditates upon Śivapura stationed in the hand, repeats the Mūla Mantras of the deity Aṅgamālinī, and touches the body of the disciple. The touch of the Guru who has himself realized the Goddess transmits a direct transmission of śakti.</p>
+        </div>
+
+        <div class="sonic-card">
+          <h4>2 · Dṛg-dīkṣā — Initiation by Vision</h4>
+          <p>The preceptor closes his eyes, meditates on Śrīkāmākṣī, and then with delighted mind looks properly at the disciple. The Guru's gaze — carrying the force of his meditation — transmits initiation directly through the eyes.</p>
+        </div>
+
+        <div class="sonic-card">
+          <h4>3 · Śāmbhavī-dīkṣā — Initiation of Śambhu</h4>
+          <p>Merely when the preceptor beholds, speaks, and touches, perfect knowledge arises immediately. This is the highest of the three outer modes: it requires no special ritual act but only the complete spiritual attainment of the Guru. The body of the preceptor is similar to the body of the Goddess.</p>
+        </div>
+
+        <div class="sonic-card">
+          <h4>4 · Mānasī-dīkṣā — Mental Initiation (Supreme)</h4>
+          <p>The leading spiritual preceptor, properly gratified by means of service of long duration, silently intends initiation of the disciple. This is considered the most excellent of all modes of initiation. No external sign marks it; the transmission is entirely internal, mind to mind, in the non-verbal space of pure awareness.</p>
+        </div>
+
+        <div class="verse-intro">Verses 9–15 · Kriyā-dīkṣā · The Procedure</div>
+        <p>On an auspicious day in the bright half of the month, the devotee cleans himself, takes his bath, concludes Sandhyā rites, and remains in a secluded spot remembering the form of the preceptor. The preceptor enters the place of worship, repeats the Devī Sūkta with Vidyānyāsa, and propitiates Tripurāmbikā by the sixteen Upacāras: Āvāhana, Āsana, Pādya, Arghya, Ācamana, Snāna, Vastra, Bhūṣā, Gandha, Puṣpa, Dhūpa, Dīpa, Naivedya, Tāmbūla, Pradakṣiṇā, and Praṇāma. Then by the Sahasrākṣara Vidyā he offers Puṣpāñjali.</p>
+
+        <div class="verse-intro">The Thousand-Syllabled Mantra · Sahasrākṣara Vidyā</div>
+        <blockquote>
+          The Thousand-syllabled Mantra is a series of Lalitā epithets including all the powers of the Siddhis, the Nityās, the Āvaraṇa-deities, and the Yoginīs — concluding with the secret sixteen-syllabled Kādi Mantra: <em>Ka Eṃ Īla Hrīṃ, Hasa Kahala Hrīṃ, Sakala Hrīṃ, Aiṃ Klīṃ Sauḥ Sauḥ Klīṃ Aiṃ Śrīm.</em>
+          <cite>— Bhāskararāya's note on the Sahasrākṣara Vidyā, Adhyāya 43</cite>
+        </blockquote>
+
+        <div class="verse-intro">Verses 36–73 · The Guru — Śiva in Human Form</div>
+        <p>The meaning of the word <em>Guru</em>: the letter 'GU' means 'darkness'; the letter 'RU' means 'one who dispels.' The preceptor is called Guru because he dispels darkness. After obtaining a preceptor in the form of the bestower of perfect knowledge, one should not have recourse to another. He should consider even the harsh words of the preceptor as blessings.</p>
+        <p>Śrīguru is glorified as lord Śiva himself — without three eyes, lord Acyuta himself — but not four-armed, and lord Brahmā himself — though not four-faced. Like the blind men who do not see the rising sun, only those devoid of good luck do not see Śrīguru who has the splendour of the greatest principle and who stands before one's very eyes.</p>
+
+        <blockquote>
+          "One should know that a preceptor is a rare redeemer from worldly existence. When pleased he grants the splendour of liberation from Saṃsāra. There is no principle more profound than the preceptor. There is no greater pleasure than knowledge. There is no better worship than devotion and there is no greater benefit than liberation from Saṃsāra."
+          <cite>— Hayagrīva, Adhyāya 43, verses 36 and 73</cite>
+        </blockquote>
+
+        <div class="verse-intro">Verses 74–88 · Supremacy of Kāmākṣī · All Paths Lead to Her</div>
+        <p>In all Vedas and scriptural texts it is mentioned that Śrīkāmākṣī is greater than the greatest among Brahmā, Viṣṇu, Śiva and others. Those who worship Kāmākṣī with or without Mantras — whether they are women, Vaiśyas, or Śūdras — do attain the greatest goal. What then in the case of Kṣatriyas and Brāhmaṇas who worship with Mantras? Even if they are men of the world, they are liberated ones certainly, without any doubt.</p>
+
+      </div>
+
+    </div>
+  </div><!-- /tab-adhyaya43 -->
+
+  <!-- ═══════════════════════════════════════════════
+       TAB 6 · Adhyāya 44 — Meditation
+  ═══════════════════════════════════════════════ -->
+  <div id="tab-adhyaya44" class="tab-panel">
+    <div class="content-wrap">
+
+      <div class="adhyaya-header">
+        <div class="num">Adhyāya 44 · Brahmāṇḍa Purāṇa · Uttarabhāga</div>
+        <div class="deva">देवताध्यानम्</div>
+        <h3>Meditation on the Goddess</h3>
+        <div class="scope">Procedure of Nyāsa · Śrī Cakra Nyāsa · Sixteen Nityā Deities · The Sixfold Nyāsa · Kuṇḍalinī Awakening · Final Placement of Cakreśvarī</div>
+      </div>
+
+      <div class="prefatory">
+        The central principle of Adhyāya 44: one can worship a deity only after identifying oneself with the deity. The elaborate system of Nyāsa — the ceremonial placement of Mantras and divine presences on the parts of the body — is the means by which the devotee transforms their gross physical body into the body of the Goddess, becoming <em>Devatāvigraha</em> (one who has attained the physical body of the deity), before proceeding to worship.
+      </div>
+
+      <div class="adhyaya-body">
+
+        <div class="verse-intro">Verses 1–16 · The Procedure of Nyāsa</div>
+        <p>The disciple enters the special place intended for Japa bringing his seat. He sprinkles water repeating the requisite Mantras. He meditates upon his own soul and the form of the deity without any distinction between the two. He sits in Padmāsana posture facing east. He makes the Trikhaṇḍa Mudrā, makes obeisance to the preceptor and elders, and performs the rite of Nyāsa with Bālābīja Mantras in the fingers beginning with the middle finger.</p>
+        <p>He allots the three types of bodies — Kāraṇa (causal), Sūkṣma (subtle), and Sthūla (gross). He performs Nyāsa of Bālābīja Mantras in the navel, heart, and middle of eyebrows. He places the Mātṛkā Mantras in the navel onwards in due order, then the nine seats in the heart: Brahmā, Viṣṇu, Rudra, Īśvara, Sadāśiva, Pūṣan, Tūlikā, Prakāśaka, and Vidyāsana.</p>
+
+        <div class="verse-intro">Verses 11–12 · Awakening of Kuṇḍalinī</div>
+        <p>The disciple shows the Mudrā called Padmatrikhaṇḍayonī and fills the mouth with wind, producing the sound <em>Huṃ Huṃ Huṃ</em> through half-closed lips — thus awakening Kuṇḍalinī by the power of Mantras. At the end of the twelfth repetition, he thinks about his identity with Śiva, places him in his position, and places the Bīja Mantras of Vāgbhava at the root, heart, and arms.</p>
+
+        <div class="verse-intro">Verses 19–23 · Meditation on Bhairavī</div>
+        <p>The disciple meditates upon Bhairavī — favourably disposed towards her devotees — who holds a rosary and a book in the upper hands and flowery arrows and a bow in the other hands, with Mudrās of boon and freedom from fear. Around her neck she wears the Akṣamālā. She stays in an embodied lotus beneath the Lipikalpadruma (the Wish-yielding tree of letters), identical with the Lipis (characters of the alphabet), embellished by many crores of Dūtis surrounding her.</p>
+
+        <div class="verse-intro">Verses 102–151 · The Śrī Cakra Nyāsa · Placement of All Deities</div>
+        <p>After the preliminary Nyāsas, the devotee performs the Nyāsa of the Śrī Cakra itself — the most elaborate of all. He places Cakreśvarī in the heart, dedicates the Cakra, and makes it pervade his own physical form. He places:</p>
+
+        <div class="sonic-card">
+          <h4>The Sixteen Nityā Deities</h4>
+          <p>Kāmeśvarī, Bhagamālinī, Nityaklinnā, Bheruṇḍinī, Vahnivāsinikā, Mahāvajreśvarī, Śivādūtī, Tvaritā, Kulasundarikā, Kulyā, Nīlapatākā, Vijayā, Nityamaṅgalā, Prabhāmālinī, and Citrā — placed in a triangle in the heart, beginning with the apex kept downwards. These are the fifteen Nityā deities plus Mahānityā (Lalitā herself).</p>
+        </div>
+
+        <div class="sonic-card">
+          <h4>The Eight Mudrā Deities (Nāma 977 Correspondence)</h4>
+          <p>Sarvasaṃkṣobhiṇī, Sarvavidrāviṇī, Sarvārthākarṣaṇī, Sarvavaśakāriṇī, Sarvapriyakāriṇī, Sarvamahāṅkuśī, Sarvakhecarī, Trikhaṇḍā — the eight Mudrā-deities placed on eight positions of the body, with the remaining two (Sarvabījā and Yonimudrā) on the head and foot.</p>
+        </div>
+
+        <div class="sonic-card">
+          <h4>The Eight Anaṅga Deities</h4>
+          <p>Anaṅgakusumā, Anaṅgamekhalā, Anaṅgamadanā, Anaṅgamadanāturā, Anaṅgarekhā, Anaṅgavegā, Anaṅgāṅkuśā, and Anaṅgādhāramālinī — placed in the bone of the forehead, right clavicle, right thigh, and right calf; in the left, in reverse order.</p>
+        </div>
+
+        <div class="verse-intro">Verse 149–151 · The Final Placement · Yonimudrā · Samādhi</div>
+        <p>Pramodinī the eternal goddess and goddess Tripurasundarī are on either side. The disciple places Devī Akhaṇḍajagadambikā in their middle — the unbroken, universal Mother. After placing Cakreśvarī in the heart and making the Cakra raised up, he shows the Mudrā named Yoni (nāma 982) and performs Japa of Sarvānanda Mantra — the Mantra of universal bliss. Thus the Cakradevī of the mystical circle becomes one's own.</p>
+
+        <blockquote>
+          "Just as, due to the power of contemplation, even a worm turns out to be a black bee, so also, due to the power of ecstatic trance, a man becomes Brahman. When the greatest principle that is beyond everything capable of being described and that is free from aberrations is realized, the Mantras become servants along with the presiding deities of the Mantras."
+          <cite>— Hayagrīva, Adhyāya 43, verses 46–48</cite>
+        </blockquote>
+
+      </div>
+
+    </div>
+  </div><!-- /tab-adhyaya44 -->
+
+  <!-- ═══════════════════════════════════════════════
+       TAB 7 · Sonic Analysis
+  ═══════════════════════════════════════════════ -->
+  <div id="tab-sonic" class="tab-panel">
+    <div class="content-wrap">
+
+      <div class="hero">
+        <div class="om-mantra">नाद-मेल-स्वर-विश्लेषणम्</div>
+        <div class="subtitle-line">Sonic Analysis · Supplementary Session</div>
+        <h1>Nāda · Mēḷakarta · Svara · <strong>Alaṅkāra</strong></h1>
+        <div class="namas-range">Cross-Referenced to Part VIII Nāmas 973–1000</div>
+        <p class="summary">
+          A supplementary analytical session examining the sonic, musical, and acoustic dimensions
+          of the final twenty-eight nāmas — their relationship to the Nāda philosophy of the
+          Śrī Vidyā tradition, to the seventy-two Mēḷakarta rāga system of Carnatic music,
+          and to the nine Alaṅkāras of classical musicology.
+        </p>
+      </div>
+
+      <div class="sonic-tabs-bar">
+        <button class="sonic-tab-btn active" onclick="switchSonic('nada')">I · Nāda Philosophy</button>
+        <button class="sonic-tab-btn" onclick="switchSonic('svara')">II · Sapta Svara &amp; 12 Octaves</button>
+        <button class="sonic-tab-btn" onclick="switchSonic('melakarta')">III · 72 Mēḷakarta Rāgas</button>
+        <button class="sonic-tab-btn" onclick="switchSonic('alankara')">IV · 9 Alaṅkāras</button>
+        <button class="sonic-tab-btn" onclick="switchSonic('xref')">V · Cross-Reference</button>
+      </div>
+
+      <!-- Sonic Panel 1: Nāda -->
+      <div id="sonic-nada" class="sonic-panel active">
+        <div class="sonic-card">
+          <h4><span class="deva-term">नाद</span> Nāda — The Primordial Sound</h4>
+          <p>Nāma 901 (<em>Nādarūpiṇī</em>) of Part VII establishes the Goddess as the form of the primordial Nāda. In the Śrī Vidyā tradition, Nāda is the primal, unmanifest, uncreated vibration that precedes all manifest sound — the cosmic resonance that is the very substrate of existence. Part VIII nāma 993 (<em>Ajñānadhvāntadīpikā</em>) — the lamp dispelling the darkness of ignorance — represents the sonic equivalent: the Mantra as sound-lamp.</p>
+        </div>
+        <div class="sonic-card">
+          <h4>The Four Levels of Nāda</h4>
+          <p><strong>Parā</strong> — transcendent sound beyond all vibration (corresponds to Nāma 1000 · Lalitāmbikā). <strong>Paśyantī</strong> — seeing sound, the first stirring of the Bindu (Nāma 974 · Bindutarpaṇasantuṣṭā). <strong>Madhyamā</strong> — intermediate sound, mental speech (Nāmas 979–981 · Jñāna series). <strong>Vaikharī</strong> — articulate sound, the spoken Mantra (Nāma 977 · Daśamudrāsamārādhyā — the ten Mudrā worship includes vocal Mantra).</p>
+        </div>
+        <div class="sonic-card">
+          <h4>Bindu and Nāda in the Śrī Cakra</h4>
+          <p>Nāma 974 (<em>Bindutarpaṇasantuṣṭā</em>) and nāma 996 (<em>Śrīcakrarājanilayā</em>) together frame the sonic cosmology of Part VIII: the Bindu is the point at which Nāda and Bindu — sound and point — meet and from which the entire Śrī Cakra radiates. The Pañcadaśī Mantra (three Kūṭas) is the sonic manifestation of the three-triangle heart of the Śrī Cakra.</p>
+        </div>
+        <div class="sonic-card">
+          <h4>Yonimudrā and Sonic Geometry</h4>
+          <p>Nāma 982 (<em>Yonimudrā</em>) corresponds to the downward-pointing triangle of the Śrī Cakra — the Yoni as the source of all creation. In sonic terms, this is the fundamental tone (<em>Ṣaḍja</em>) from which all other tones arise: the Sa of the rāga, the root from which the entire melodic universe unfolds.</p>
+        </div>
+      </div>
+
+      <!-- Sonic Panel 2: Svara -->
+      <div id="sonic-svara" class="sonic-panel">
+        <div class="sonic-card">
+          <h4>Sapta Svara — The Seven Notes</h4>
+          <p>The seven notes of Indian classical music — <em>Ṣaḍja (Sa), Ṛṣabha (Ri), Gāndhāra (Ga), Madhyama (Ma), Pañcama (Pa), Dhaivata (Dha), Niṣāda (Ni)</em> — each correspond to specific nāmas in the Sahasranāma through the Śrī Vidyā correspondence system.</p>
+        </div>
+        <div class="raga-grid">
+          <div class="raga-card"><span class="raga-num">Sa · Root</span><span class="raga-name">Ṣaḍja</span><br>Yonimudrā (982) · The fundamental</div>
+          <div class="raga-card"><span class="raga-num">Ri · Second</span><span class="raga-name">Ṛṣabha</span><br>Triguṇā (984) · The three inflections</div>
+          <div class="raga-card"><span class="raga-num">Ga · Third</span><span class="raga-name">Gāndhāra</span><br>Jñānamudrā (979) · Knowing gesture</div>
+          <div class="raga-card"><span class="raga-num">Ma · Fourth</span><span class="raga-name">Madhyama</span><br>Trikoṇagā (986) · The triangle</div>
+          <div class="raga-card"><span class="raga-num">Pa · Fifth</span><span class="raga-name">Pañcama</span><br>Śrīcakrarājanilayā (996)</div>
+          <div class="raga-card"><span class="raga-num">Dha · Sixth</span><span class="raga-name">Dhaivata</span><br>Śrīśivā (998) · Auspiciousness</div>
+          <div class="raga-card"><span class="raga-num">Ni · Seventh</span><span class="raga-name">Niṣāda</span><br>Śivaśaktaikya (999) · Union</div>
+        </div>
+        <div class="sonic-card">
+          <h4>The Twelve Svarasthānas (Chromatic Scale)</h4>
+          <p>The twelve chromatic positions of the octave — Śuddha and Vikṛta forms of each svara — correspond to the twelve Āvaraṇa levels of the Śrī Cakra worship. The five vikṛta (altered) svaras (Ri, Ga, Ma, Dha, Ni in their two forms each) correspond to the ten Mudrā deities of nāma 977. The Ṣaḍja and Pañcama (Sa and Pa), which are invariable, correspond to Śivaśaktaikya (nāma 999) — the unchanging union of Śiva and Śakti.</p>
+        </div>
+      </div>
+
+      <!-- Sonic Panel 3: Melakarta -->
+      <div id="sonic-melakarta" class="sonic-panel">
+        <div class="sonic-card">
+          <h4>The Seventy-Two Mēḷakarta System</h4>
+          <p>The 72 Mēḷakarta rāgas of Carnatic music — parent scales from which all other rāgas are derived — are organized into 12 Cakras of 6 rāgas each. The 12 Cakras correspond to the 12 outer triangles of the Śrī Cakra's innermost section. The rāgas specifically relevant to the final nāmas (973–1000) are those associated with the Bindu-Cakra and the triple Śaktis.</p>
+        </div>
+        <div class="sonic-card">
+          <h4>Rāgas of the Final Cakra (Cakra 12 · Āditya)</h4>
+          <p>The twelfth Cakra of the Mēḷakarta system — named Āditya (the Sun) — contains Mēḷakartas 67–72, associated with the radiant, solar aspect of the Goddess corresponding to nāma 993 (<em>Ajñānadhvāntadīpikā</em> — the lamp of knowledge) and nāma 998 (<em>Śrīśivā</em> — the auspicious, sunlike divine).</p>
+        </div>
+        <div class="raga-grid">
+          <div class="raga-card"><span class="raga-num">67</span><span class="raga-name">Sucharitra</span></div>
+          <div class="raga-card"><span class="raga-num">68</span><span class="raga-name">Jyotisvarūpiṇī</span></div>
+          <div class="raga-card"><span class="raga-num">69</span><span class="raga-name">Dhātuvardhani</span></div>
+          <div class="raga-card"><span class="raga-num">70</span><span class="raga-name">Nāsikabhūṣaṇī</span></div>
+          <div class="raga-card"><span class="raga-num">71</span><span class="raga-name">Kosalam</span></div>
+          <div class="raga-card"><span class="raga-num">72</span><span class="raga-name">Rasikapriya</span></div>
+        </div>
+        <div class="sonic-card">
+          <h4>Śivaśakti Mēḷakarta Correspondence (Nāma 999)</h4>
+          <p>Mēḷakarta 64 (<em>Vāchaspati</em>) — combining the sharp Madhyama (Ma₂) with the natural Niṣāda — is the rāga most directly associated with nāma 999 (<em>Śivaśaktaikyarūpiṇī</em>): its characteristic tension between the two elements (Ma₂ = Śakti-triangle; natural Ni = Śiva-triangle) that resolve into perfect harmonic union in the final cadence mirrors the Śiva-Śakti union of the name itself.</p>
+        </div>
+      </div>
+
+      <!-- Sonic Panel 4: Alankaras -->
+      <div id="sonic-alankara" class="sonic-panel">
+        <div class="sonic-card">
+          <h4>The Nine Alaṅkāras of Classical Musicology</h4>
+          <p>The nine Alaṅkāras (ornaments) of classical Indian music — melodic patterns repeated through the scales — correspond to the nine Āvaraṇas of the Śrī Cakra. Each Alaṅkāra represents a mode of approaching and circumambulating the central Bindu (the Goddess at the centre).</p>
+        </div>
+        <div class="sonic-card">
+          <h4>1 · Sarali (Ascending-Descending)</h4>
+          <p>Sa Ri Ga Ma Pa Dha Ni Sa / Sa Ni Dha Pa Ma Ga Ri Sa. Corresponds to the outer square enclosures of the Śrī Cakra — the Bhūpura — and to nāma 995 (<em>Sarvānullaṅghyaśāsanā</em>): the command that none may transgress, like the outer boundary that none may cross without the Guru's initiation.</p>
+        </div>
+        <div class="sonic-card">
+          <h4>2 · Janta (Doubled Notes)</h4>
+          <p>Sa Sa Ri Ri Ga Ga Ma Ma. The doubling of each note corresponds to the paired nāmas of the final section: 973–974 (Purity and Bindu), 979–981 (Jñāna series), 998–999 (Śrīśivā and Śivaśakti).</p>
+        </div>
+        <div class="sonic-card">
+          <h4>3–9 · The Remaining Seven</h4>
+          <p><strong>Daṭṭu (Leaping)</strong> — corresponds to nāma 991 (<em>Ṣaḍadhvātīta</em>: transcending the six paths — the leap beyond the ordinary scale). <strong>Mellu (Gliding)</strong> — nāma 992 (<em>Avyājakaruṇā</em>: the smooth, unpremeditated flow of compassion). <strong>Jaṇṭa (Triple patterns)</strong> — nāma 984 (<em>Triguṇā</em>). <strong>Daṭṭu mellu</strong> — nāma 999 (<em>Śivaśaktaikya</em>: the combination of leap and glide). <strong>Gamaka (Oscillation)</strong> — nāma 982 (<em>Yonimudrā</em>: the creative oscillation between the two triangles). <strong>Kampita (Vibration)</strong> — nāma 901 (<em>Nādarūpiṇī</em>: pure vibration). <strong>Nokku (Stress)</strong> — nāma 1000 (<em>Lalitāmbikā</em>: the final stressed landing).</p>
+        </div>
+      </div>
+
+      <!-- Sonic Panel 5: Cross-Reference -->
+      <div id="sonic-xref" class="sonic-panel">
+        <div class="sonic-card">
+          <h4>Cross-Reference: Nāmas 973–1000 · Sonic Dimensions</h4>
+          <p>The following table cross-references each final nāma with its Nāda philosophical category, its Mēḷakarta Cakra association, its Svara correspondence, and its Alaṅkāra type — providing a complete sonic analysis of the Sahasranāma's closing movement.</p>
+        </div>
+        <table class="xref-table">
+          <thead>
+            <tr>
+              <th>Nāma</th>
+              <th>Name</th>
+              <th>Nāda Level</th>
+              <th>Svara</th>
+              <th>Alaṅkāra</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>973</td><td>Śuddhamānasā</td><td>Paśyantī</td><td>Sa (pure)</td><td>Sarali</td></tr>
+            <tr><td>974</td><td>Bindutarpaṇasantuṣṭā</td><td>Parā</td><td>Sa-Bindu</td><td>Nokku</td></tr>
+            <tr><td>975</td><td>Pūrvajā</td><td>Parā</td><td>Sa (root)</td><td>Sarali</td></tr>
+            <tr><td>976</td><td>Tripurāmbikā</td><td>Madhyamā</td><td>Sa-Ri-Ga</td><td>Janta</td></tr>
+            <tr><td>977</td><td>Daśamudrāsamārādhyā</td><td>Vaikharī</td><td>All 10</td><td>All</td></tr>
+            <tr><td>978</td><td>Tripurāśrī-vaśaṅkarī</td><td>Madhyamā</td><td>Ma (ruler)</td><td>Daṭṭu</td></tr>
+            <tr><td>979</td><td>Jñānamudrā</td><td>Paśyantī</td><td>Ga (knowing)</td><td>Mellu</td></tr>
+            <tr><td>980</td><td>Jñānagamyā</td><td>Paśyantī</td><td>Ga→Sa</td><td>Sarali</td></tr>
+            <tr><td>981</td><td>Jñānajñeyasvarūpiṇī</td><td>Parā + Vaikharī</td><td>Sa=Sa (union)</td><td>Gamaka</td></tr>
+            <tr><td>982</td><td>Yonimudrā</td><td>Madhyamā</td><td>Sa (root)</td><td>Gamaka</td></tr>
+            <tr><td>983</td><td>Trikhaṇḍeśī</td><td>Madhyamā</td><td>Sa-Pa-Sa</td><td>Jaṇṭa</td></tr>
+            <tr><td>984</td><td>Triguṇā</td><td>Madhyamā</td><td>Ri–Ga–Ma</td><td>Jaṇṭa</td></tr>
+            <tr><td>985</td><td>Ambā</td><td>Vaikharī</td><td>Sa (mother)</td><td>Nokku</td></tr>
+            <tr><td>986</td><td>Trikoṇagā</td><td>Paśyantī</td><td>Ma (middle)</td><td>Daṭṭu</td></tr>
+            <tr><td>987</td><td>Anaghā</td><td>Parā</td><td>Ni (pure)</td><td>Mellu</td></tr>
+            <tr><td>988</td><td>Adbhutacāritrā</td><td>Vaikharī</td><td>All</td><td>Sarali</td></tr>
+            <tr><td>989</td><td>Vāñchitārthapradāyinī</td><td>Vaikharī</td><td>Pa (giver)</td><td>Sarali</td></tr>
+            <tr><td>990</td><td>Abhyāsātiśayajñātā</td><td>All four</td><td>Full scale</td><td>All</td></tr>
+            <tr><td>991</td><td>Ṣaḍadhvātītarūpiṇī</td><td>Beyond all</td><td>Beyond scale</td><td>Daṭṭu</td></tr>
+            <tr><td>992</td><td>Avyājakaruṇāmūrtiḥ</td><td>Paśyantī</td><td>Dha (flowing)</td><td>Mellu</td></tr>
+            <tr><td>993</td><td>Ajñānadhvāntadīpikā</td><td>Paśyantī</td><td>Sa (light)</td><td>Nokku</td></tr>
+            <tr><td>994</td><td>Ābālagopa-viditā</td><td>Vaikharī</td><td>Sa (simple)</td><td>Sarali</td></tr>
+            <tr><td>995</td><td>Sarvānullaṅghyaśāsanā</td><td>Madhyamā</td><td>Pa (fixed)</td><td>Daṭṭu</td></tr>
+            <tr><td>996</td><td>Śrīcakrarājanilayā</td><td>All four</td><td>All 12</td><td>All 9</td></tr>
+            <tr><td>997</td><td>Śrīmat-Tripurasundarī</td><td>Madhyamā</td><td>Sa-Ma-Sa</td><td>Jaṇṭa</td></tr>
+            <tr><td>998</td><td>Śrīśivā</td><td>Parā</td><td>Sa (pure)</td><td>Nokku</td></tr>
+            <tr><td>999</td><td>Śivaśaktaikyarūpiṇī</td><td>Parā (union)</td><td>Sa=Sa</td><td>Daṭṭu-Mellu</td></tr>
+            <tr><td>1000</td><td>Lalitāmbikā</td><td>Beyond all</td><td>Ādhāra Sa</td><td>Final Nokku</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div><!-- /tab-sonic -->
+
+  <!-- ═══════════════════════════════════════════════
+       TAB 8 · Colophon
+  ═══════════════════════════════════════════════ -->
+  <div id="tab-colophon" class="tab-panel">
+    <div class="content-wrap">
+
+      <div class="hero">
+        <div class="om-mantra">उपसंहारः</div>
+        <div class="subtitle-line">Colophon · The Completion</div>
+        <h1><strong>Iti</strong> Śrībrahmāṇḍapurāṇe</h1>
+        <div class="namas-range">The Formal Conclusion of the Lalitā Sahasranāma</div>
+      </div>
+
+      <div class="colophon-block">
+        <span class="bija">श्रीं ह्रीं ऐं ॐ</span>
+        <div class="deva-colophon">
+          एवं श्रीललितादेव्या नाम्नां साहस्रकं जगुः<br><br>
+          ॥ इति श्रीब्रह्माण्डपुराणे उत्तराखण्डे<br>
+          श्रीहयग्रीवागस्त्यसंवादे<br>
+          श्रीललितासहस्रनामस्तोत्रकथनं सम्पूर्णम् ॥
+        </div>
+        <div class="roman-colophon">
+          Thus were sung the thousand names of Śrī Lalitā Devī.<br><br>
+          Thus is concluded the narration of the Śrī Lalitā Sahasranāma Stotra<br>
+          in the dialogue between Śrī Hayagrīva and Agastya<br>
+          in the Uttarakhanda of the Śrī Brahmāṇḍa Purāṇa.
+        </div>
+      </div>
+
+      <div class="section-hd">
+        <h2>The Structure of the Colophon</h2>
+      </div>
+
+      <div class="prefatory">
+        The colophon of the Lalitā Sahasranāma Stotra follows the classical Purāṇic convention: it names the text (<em>Śrī Lalitā Sahasranāma Stotra</em>), its context (<em>the dialogue between Hayagrīva and Agastya</em>), its source text (<em>the Brahmāṇḍa Purāṇa, Uttarakhanda</em>), and declares its completion (<em>sampūrṇam</em> — completely fulfilled, not merely ended). The Bīja Mantra <em>Śrīṃ Hrīṃ Aiṃ Oṃ</em> that precedes it is the sonic seal of completion.
+      </div>
+
+      <div class="sonic-card">
+        <h4>The Four Bīja Mantras of the Colophon</h4>
+        <p><strong>Śrīṃ</strong> — the Bīja of Mahālakṣmī, of wealth, auspiciousness, and the Śakti Kūṭa of the Pañcadaśī. <strong>Hrīṃ</strong> — the Māyā Bīja, the Bīja of the Kāmarāja Kūṭa, of illusion dissolved in awareness. <strong>Aiṃ</strong> — the Bīja of Sarasvatī and the Vāgbhava Kūṭa, of speech and knowledge. <strong>Oṃ</strong> — the Praṇava, the universal Bīja, the root of all sound — completing the sequence by returning to the source.</p>
+      </div>
+
+      <div class="sonic-card">
+        <h4>Sampūrṇam — The Completion</h4>
+        <p>The word <em>sampūrṇam</em> (completely fulfilled, thoroughly full) is not merely a procedural marker. In the Purāṇic tradition, the completion of a sacred text is itself a sacred act: the Goddess has been named, the naming is complete, and the fullness (<em>pūrṇatā</em>) of her thousand names rests in the space of the listener's awareness. The Sahasranāma ends not with silence but with fullness.</p>
+      </div>
+
+      <hr class="section-rule-gold">
+
+      <div class="section-hd">
+        <h2>The Arc of the Eight Sessions</h2>
+      </div>
+
+      <table class="xref-table">
+        <thead>
+          <tr>
+            <th>Session</th>
+            <th>Nāmas</th>
+            <th>Central Theme</th>
+            <th>Adhyāyas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Part I</td><td>1–100</td><td>Beauty, Sovereignty, Battle</td><td>1–5</td></tr>
+          <tr><td>Part II</td><td>101–200</td><td>Cosmic Body, Cakras, Weapons</td><td>6–12</td></tr>
+          <tr><td>Part III</td><td>201–350</td><td>Mantra, Śrī Cakra, Initiation</td><td>13–18</td></tr>
+          <tr><td>Part IV</td><td>351–574</td><td>The Vidyās, Goddess Forms</td><td>19–22</td></tr>
+          <tr><td>Part V</td><td>575–700</td><td>Liberation, Vedānta, Tantra</td><td>23–25</td></tr>
+          <tr><td>Part VI</td><td>701–766</td><td>Sonic, Rasas, Poetic Forms</td><td>26–29</td></tr>
+          <tr><td>Part VII</td><td>767–972</td><td>Vitality, Sacrifice, Light</td><td>30–39</td></tr>
+          <tr><td><strong>Part VIII</strong></td><td><strong>973–1000</strong></td><td><strong>Mudrās, Union, Lalitāmbikā</strong></td><td><strong>40–44</strong></td></tr>
+        </tbody>
+      </table>
+
+      <div class="floret">❧</div>
+
+      <blockquote>
+        "Recollection of Śrīpādukā is greater than millions and millions of great charitable gifts,
+        millions and millions of great holy rites, and millions and millions of great sacrifices.
+        Thus everything has been briefly recounted by me, O Pot-born sage.
+        By concentrating on this much an intelligent disciple shall become omniscient."
+        <cite>— Hayagrīva, Adhyāya 43, verses 57 and 87–88</cite>
+      </blockquote>
+
+      <div class="colophon-block" style="margin-top:3rem;">
+        <div class="deva-colophon" style="font-size:1.6rem; color:var(--gold); margin-bottom:1rem;">
+          ॐ ललिताम्बिकायै नमः
+        </div>
+        <div class="roman-colophon" style="font-size:1rem;">
+          Oṃ — Obeisance to the Divine Mother Lalitāmbikā.
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /tab-colophon -->
+
+</div><!-- /#main -->
+
+<script>
+function switchTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  var panel = document.getElementById('tab-' + id);
+  if (panel) panel.classList.add('active');
+  var btns = document.querySelectorAll('.tab-btn');
+  btns.forEach(function(b) {
+    if (b.getAttribute('onclick') && b.getAttribute('onclick').indexOf("'" + id + "'") !== -1) {
+      b.classList.add('active');
+    }
+  });
+  document.getElementById('main').scrollTop = 0;
+  window.scrollTo(0, 0);
+}
+
+function switchSonic(id) {
+  document.querySelectorAll('.sonic-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sonic-tab-btn').forEach(b => b.classList.remove('active'));
+  var panel = document.getElementById('sonic-' + id);
+  if (panel) panel.classList.add('active');
+  document.querySelectorAll('.sonic-tab-btn').forEach(function(b) {
+    if (b.getAttribute('onclick') && b.getAttribute('onclick').indexOf("'" + id + "'") !== -1) {
+      b.classList.add('active');
+    }
+  });
+}
+
+document.getElementById('menu-btn').addEventListener('click', function() {
+  document.getElementById('sidebar').classList.toggle('open');
+});
+document.getElementById('sidebar-close').addEventListener('click', function() {
+  document.getElementById('sidebar').classList.remove('open');
+});
+document.getElementById('sidebar').querySelectorAll('a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    if (window.innerWidth <= 860) {
+      document.getElementById('sidebar').classList.remove('open');
+    }
+  });
+});
+</script>
+</body>
+</html>
